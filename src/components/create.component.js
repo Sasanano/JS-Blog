@@ -4,16 +4,24 @@ import { Form } from '../core/form'
 export class CreateComponent extends Component {
     constructor(id) {
         super(id)
-        
+
         this.form = null
     }
 
     init() {
         this.$el.addEventListener('submit', submitHandler.bind(this))
+        this.form = new Form(this.$el, {
+            title: [],
+            fullText: []
+        })
     }
 }
 
 function submitHandler(event) {
     event.preventDefault()
+    const formData = {
+        type: this.$el.type.value,
+        ...this.form.value()
+    }
 
 }

@@ -1,1 +1,14 @@
-export class Form {}
+export class Form {
+    constructor(container, controls) {
+        this.form = form
+        this.controls = controls
+    }
+
+    value() {
+        const value = {}
+        Object.keys(this.controls).forEach(control => {
+            value[control] = this.form[control].value
+        })
+        return value
+    }
+}
