@@ -1,5 +1,5 @@
 export class Form {
-    constructor(container, controls) {
+    constructor(form, controls) {
         this.form = form
         this.controls = controls
     }
