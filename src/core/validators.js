@@ -1,5 +1,11 @@
 export class Validators {
-    required(value = '') {
+   static required(value = '') {
         return value && value.trim()
+    }
+
+    static minLength(length) {
+        return value => {
+            return value.length >= length
+        }
     }
 }
